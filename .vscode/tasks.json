@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compiler et lancer",
+      "type": "shell",
+      "command": "gcc *.c -o ${workspaceFolderBasename}.exe -lraylib -lopengl32 -lgdi32 -lwinmm; if ($?) { ./${workspaceFolderBasename}.exe }",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
