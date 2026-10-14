@@ -15,5 +15,5 @@ typedef enum{
     BOTTOM_MIDDLE,
     BOTTOM_RIGHT,
 } Cells_around;
-void set_neighbors_state(Cells_around cells_around, Cell target_cell, int lines_nb, int cols_nb, Cell cells[lines_nb][cols_nb]){
+int how_many_neighbor_alive(Cells_around cells_around, Cell target_cell, int lines_nb, int cols_nb, Cell cells[lines_nb][cols_nb]);
 #endif

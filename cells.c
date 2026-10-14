@@ -24,7 +24,6 @@ void place_cell(int lines_nb, int cols_nb, Cell cells[lines_nb][cols_nb]){
                 cells[x][y].coord_y < mouse_y &&
                 mouse_y < cells[x][y].coord_y + cells[x][y].width){
                 cells[x][y].alive = true;
-                cells[x][y].
             }
         } 
     }
