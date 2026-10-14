@@ -22,16 +22,19 @@ int main() {
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
+        if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
+            place_cell(lines_nb, cols_nb, cells);
+        }
         BeginDrawing();
         ClearBackground(RAYWHITE);
-    for(int x = 0; x < lines_nb; x++){
+    for(int x = 0; x < lines_nb; x++){ //Draw rectangle if the cell is alive
         for(int y = 0; y < cols_nb; y++){
             if(cells[x][y].alive == 1){
                 DrawRectangle(cells[x][y].coord_x, cells[x][y].coord_y, cells[x][y].width, cells[x][y].width, GREEN);
             }
         }
     }
-        for(int x = 0 ; x < SCREEN_WIDTH; x += CELL_SIZE){
+        for(int x = 0 ; x < SCREEN_WIDTH; x += CELL_SIZE){ //draw rectangle lines
             for(int y = 0 ; y < SCREEN_HEIGHT; y += CELL_SIZE){
                 DrawRectangleLines(x, y, CELL_SIZE, CELL_SIZE, BLACK);
                 

@@ -10,7 +10,10 @@ typedef struct{
     int coord_y;
     int width;
     int alive;
+    int alive_nb;
+    int neighbors[8];
 } Cell; 
 
 void init_cell(int lines_nb, int cols_nb, Cell cells[lines_nb][cols_nb]);
+void place_cell(int lines_nb, int cols_nb, Cell cells[lines_nb][cols_nb]);
 #endif
