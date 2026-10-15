@@ -14,6 +14,6 @@ typedef struct{
     int neighbors[8];
 } Cell; 
 
-void init_cell(int lines_nb, int cols_nb, Cell cells[lines_nb][cols_nb]);
-void place_cell(int lines_nb, int cols_nb, Cell cells[lines_nb][cols_nb]);
+void init_cell(int lines_nb, int cols_nb, Cell cells[cols_nb][lines_nb]);
+void place_cell(int lines_nb, int cols_nb, Cell cells[cols_nb][lines_nb]);
 #endif
