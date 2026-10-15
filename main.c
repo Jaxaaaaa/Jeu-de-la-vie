@@ -8,6 +8,8 @@
 #include "new_gen.h"
 #include "game.h"
 int main() {
+    Color night_blue  = { 12, 14, 32, 255 };    // bleu nuit, presque noir
+    Color neon_purple = { 168, 85, 247, 255 };  // violet soutenu et lumineux
     int lines_nb = SCREEN_HEIGHT / CELL_SIZE;
     int cols_nb = SCREEN_WIDTH / CELL_SIZE;
     int cases_nb = lines_nb * cols_nb;  
@@ -26,7 +28,7 @@ int main() {
         {
         case STATE_PLACING:
             BeginDrawing();
-            ClearBackground(RAYWHITE);
+            ClearBackground(night_blue);
             DrawText(TextFormat("Cliquez pour placer une case"), 0, 0, 20, BLACK);
             DrawText(TextFormat("Appuyez sur espace pour lancer la simulation"), 0, 30, 20, BLACK);
             if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
@@ -35,13 +37,13 @@ int main() {
             for(int x = 0; x < cols_nb; x++){ //Draw rectangle if the cell is alive
                 for(int y = 0; y < lines_nb; y++){
                     if(cells[x][y].alive == 1){
-                        DrawRectangle(cells[x][y].coord_x, cells[x][y].coord_y, cells[x][y].width, cells[x][y].width, GREEN);
+                        DrawRectangle(cells[x][y].coord_x, cells[x][y].coord_y, cells[x][y].width, cells[x][y].width, neon_purple);
                     }
                 }
             }
             for(int x = 0 ; x < SCREEN_WIDTH; x += CELL_SIZE){ //draw rectangle lines
                 for(int y = 0 ; y < SCREEN_HEIGHT; y += CELL_SIZE){
-                     DrawRectangleLines(x, y, CELL_SIZE, CELL_SIZE, BLACK);
+                     DrawRectangleLines(x, y, CELL_SIZE, CELL_SIZE, Fade(neon_purple, 0.15f));
                 }
             }
             EndDrawing();
@@ -62,11 +64,11 @@ int main() {
             }
             change_timer--;
             BeginDrawing();
-            ClearBackground(RAYWHITE);
+            ClearBackground(night_blue);
             for(int x = 0; x < cols_nb; x++){ //Draw rectangle if the cell is alive
                 for(int y = 0; y < lines_nb; y++){
                     if(cells[x][y].alive == 1){
-                        DrawRectangle(cells[x][y].coord_x, cells[x][y].coord_y, cells[x][y].width, cells[x][y].width, GREEN);
+                        DrawRectangle(cells[x][y].coord_x, cells[x][y].coord_y, cells[x][y].width, cells[x][y].width, neon_purple);
                     }
                 }
             }
