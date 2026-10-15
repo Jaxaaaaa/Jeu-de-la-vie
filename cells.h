@@ -16,4 +16,5 @@ typedef struct{
 
 void init_cell(int lines_nb, int cols_nb, Cell cells[cols_nb][lines_nb]);
 void place_cell(int lines_nb, int cols_nb, Cell cells[cols_nb][lines_nb]);
+void update_cells(int lines_nb, int cols_nb, Cell cells[cols_nb][lines_nb], Cell new_gen[cols_nb][lines_nb]);
 #endif

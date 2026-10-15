@@ -3,4 +3,5 @@
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 460
 #define CELL_SIZE 20
+#define CHANGE_DELAY 30
 #endif
